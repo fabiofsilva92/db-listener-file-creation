@@ -1,0 +1,19 @@
+spring:
+  application:
+   name: db-listener-file-creation
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/desafiodb?createDatabaseIfNotExist=True&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: pass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8081
