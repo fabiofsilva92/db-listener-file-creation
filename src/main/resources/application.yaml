@@ -17,3 +17,7 @@ spring:
 
 server:
   port: 8081
+
+aws:
+  access-key-id: incluir-na-apresentacao
+  secret-access-key: incluir-na-apresentacao
