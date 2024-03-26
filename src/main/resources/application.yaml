@@ -3,9 +3,9 @@ spring:
    name: db-listener-file-creation
 
   datasource:
-    url: jdbc:mysql://localhost:3306/desafiodb?createDatabaseIfNotExist=True&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
-    username: root
-    password: pass
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/desafiodb?createDatabaseIfNotExist=True&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:pass}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 
@@ -19,5 +19,10 @@ server:
   port: 8081
 
 aws:
-  access-key-id: incluir-na-apresentacao
-  secret-access-key: incluir-na-apresentacao
+  access-key-id: ${AWS_ACESS_KEY_ID:sdfsd}
+  secret-access-key: ${AWS_SECRET_ACESS_KEY:dsf/fsd/gdD/nXhVmh}
+  region: ${AWS_REGION:us-east-1}
+  sns.topic.dbfiles.arn: ${AWS_SNS_TOPIC_ARN:arn:aws:sns:us-east-1:058264490386:db-files}
+
+local:
+  export-file-path: ${EXPORT_FILE_PATH:C:/tmp}
